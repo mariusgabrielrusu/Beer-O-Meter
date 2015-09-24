@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Beer-O-Meter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="img/ico" href="http://www.iconsplace.com/download/orange-beer-128.ico">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+  <div data-role="page" id="information">
+    <div data-role="header">
+      <h1>Beer-O-Meter</h1>
+    </div>
+    <!-- /header -->
+    <div data-role="content" class="info-content">
+      <p>Hello!</p>
+      <p>You have entered because you want to see you alcoholemy level.</p>
+      <p>You are in the right place!</p>
+    </div>
+    <!-- /information content -->
+    <div data-role="footer">
+      <div class="containing-element" data-role="controlgroup" data-type="horizontal">
+        <a href="#data" id="next-to-data" data-transition="pop" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+      </div>
+    </div>
+  </div>
+  <!-- / intro page -->
+  <div data-role="page" data-add-back-btn="true" id="data">
+    <div data-role="header">
+      <h1>Beer-O-Meter</h1>
+    </div>
+    <!-- /header -->
+    <div class="data-content" data-role="content">
+      <p>Te rog introdu datele de mai jos.</p>
+      <div class="containing-element sex" data-role="fieldcontain">
+        <label for="sex">Sex: </label>
+        <select name="sex" id="flip-min" data-role="slider" data-theme="c" data-mini="true">
+          <option value="male"></option>
+          <option value="female"></option>
+        </select>
+      </div>
+      <div class="containing-element weight" data-role="fieldcontain">
+        <label for="weight">Weight:</label>
+        <input type="text" name="weight" id="weight" placeholder="Enter weight here" data-mini="true" data-theme="c" />
+      </div>
+      <div class="containing-element food" data-role="fieldcontain">
+        <label for="food">Did you eat? </label>
+        <select name="food" id="flip-min" data-role="slider" data-theme="c" data-mini="true">
+          <option value="no"></option>
+          <option value="yes"></option>
+        </select>
+      </div>
+      <div class="containing-element age" data-role="fieldcontain">
+        <label for="age">Age:&nbsp;</label>
+        <input type="text" name="age" id="age" placeholder="Enter age here" data-mini="true" data-theme="c" />
+      </div>
+
+      <div class="containing-element beers" data-role="fieldcontain">
+        <label for="beers">Number of beers: </label>
+        <input type="range" name="beers" id="beers" min="0" max="10" value="0" data-role="none">
+        <input type="text" readonly="readonly" data-role="none">
+      </div>
+    </div>
+    <!-- /data content -->
+    <div data-role="footer">
+      <div class="containing-element" data-role="controlgroup" data-type="horizontal">
+        <a href="#information" id="back-to-information" data-transition="pop" data-direction="reverse" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+        <a href="#results" id="next-to-results" data-transition="pop" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+      </div>
+    </div>
+    <!-- /footer -->
+  </div>
+  <!-- /data page -->
+  <div data-role="page" id="results">
+    <div data-role="header">
+      <h1>Beer-O-Meter</h1>
+    </div>
+    <div data-role="content">
+      <h3>Here are your results</h3>
+    </div>
+    <div data-role="footer">
+      <div class="containing-element" data-role="controlgroup" data-type="horizontal">
+        <a href="#data" id="back-to-data" data-transition="pop" data-direction="reverse" class="ui-btn-a" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+      </div>
+      <!-- /footer -->
+    </div>
+  </div>
+  <!-- /results page -->
+  <script src="javascripts/events.js"></script>
+</body>
+
+</html>

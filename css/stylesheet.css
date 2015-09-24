@@ -1,0 +1,101 @@
+.ui-page {
+  -webkit-backface-visibility: hidden;
+}
+
+div[data-role="content"] {
+  height: 600px;
+}
+
+div[data-role="footer"] > div[data-role="controlgroup"] {
+  left: 50%;
+  right: 50%;
+}
+
+div.containing-element a#next-to-data,
+a#next-to-results {
+  position: absolute;
+  right: 5px;
+  top: 0;
+}
+
+div.containing-element a#back-to-information {
+  position: absolute;
+  left: 5px;
+  top: 0;
+}
+
+.sex .ui-slider-label-a {
+  background: #F89BDB;
+}
+
+.sex .ui-slider-label-b {
+  background: #3498DB;
+}
+
+.sex .ui-slider-label-b {
+  background-image: url("../images/male.png");
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: 60% 50%;
+}
+
+.sex .ui-slider-label-a {
+  background-image: url("../images/female.png");
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: 40% 50%;
+}
+
+.food .ui-slider-label-b {
+  background: #FF4D4D;
+}
+
+.food .ui-slider-label-a {
+  background: #BADA55;
+}
+
+.food .ui-slider-label-b {
+  background-image: url("../images/no.png");
+  background-size: 28%;
+  background-repeat: no-repeat;
+  background-position: 60% 50%;
+}
+
+.food .ui-slider-label-a {
+  background-image: url("../images/yes.png");
+  background-size: 28%;
+  background-repeat: no-repeat;
+  background-position: 40% 50%;
+}
+
+.weight, .age {
+  display: inline-block;
+}
+
+#weight, #age {
+  padding-left: 60px;
+}
+
+
+#beers{
+  -webkit-appearance: none;
+  width: 400px;
+}
+
+#beers::-webkit-slider-runnable-track {
+  height: 40px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  background-image: url("../images/beer.png");
+  background-repeat: repeat-x;
+  background-size: 40px 40px;
+}
+
+#beers::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-top: -4px;
+}
