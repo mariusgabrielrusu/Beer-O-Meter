@@ -9,12 +9,16 @@
   <link rel="stylesheet" href="css/stylesheet.css">
   <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
   <script src="https://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+  <script src="http://underscorejs.org/underscore.js"></script>
 </head>
 
 <body>
   <div data-role="page" id="information">
     <div data-role="header">
       <h1>Beer-O-Meter</h1>
+      <div class="containing-element" data-role="controlgroup" data-type="horizontal">
+        <a href="#data" id="next-to-data" data-transition="pop" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+      </div>
     </div>
     <!-- /header -->
     <div data-role="content" class="info-content">
@@ -23,16 +27,15 @@
       <p>You are in the right place!</p>
     </div>
     <!-- /information content -->
-    <div data-role="footer">
-      <div class="containing-element" data-role="controlgroup" data-type="horizontal">
-        <a href="#data" id="next-to-data" data-transition="pop" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
-      </div>
-    </div>
   </div>
   <!-- / intro page -->
-  <div data-role="page" data-add-back-btn="true" id="data">
+  <div data-role="page" id="data">
     <div data-role="header">
       <h1>Beer-O-Meter</h1>
+      <div class="containing-element" data-role="controlgroup" data-type="horizontal">
+        <a href="#information" id="back-to-information" data-transition="pop" data-direction="reverse" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+        <a href="#results" id="next-to-results" data-transition="pop" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+      </div>
     </div>
     <!-- /header -->
     <div class="data-content" data-role="content">
@@ -62,36 +65,32 @@
 
       <div class="containing-element beers" data-role="fieldcontain">
         <label for="beers">Number of beers: </label>
-        <input type="range" name="beers" id="beers" min="0" max="10" value="0" data-role="none">
-        <input type="text" readonly="readonly" data-role="none">
+        <input type="range" name="beers" id="beers" min="1" max="10" value="0" data-role="none">
       </div>
     </div>
     <!-- /data content -->
-    <div data-role="footer">
-      <div class="containing-element" data-role="controlgroup" data-type="horizontal">
-        <a href="#information" id="back-to-information" data-transition="pop" data-direction="reverse" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
-        <a href="#results" id="next-to-results" data-transition="pop" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
-      </div>
-    </div>
-    <!-- /footer -->
   </div>
   <!-- /data page -->
   <div data-role="page" id="results">
     <div data-role="header">
       <h1>Beer-O-Meter</h1>
-    </div>
-    <div data-role="content">
-      <h3>Here are your results</h3>
-    </div>
-    <div data-role="footer">
       <div class="containing-element" data-role="controlgroup" data-type="horizontal">
         <a href="#data" id="back-to-data" data-transition="pop" data-direction="reverse" class="ui-btn-a" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
       </div>
-      <!-- /footer -->
+    </div>
+    <div data-role="content">
     </div>
   </div>
   <!-- /results page -->
-  <script src="javascripts/events.js"></script>
 </body>
+  <script src="http://backbonejs.org/backbone.js"></script>
+  <script src="javascripts/models/AlcoholData.js"></script>
+  <script src="javascripts/views/DataView.js"></script>
+  <script src="javascripts/controllers/controller.js"></script>
+  <script>
+Backbone.history.start({
+  "pushState" : true
+});
+</script>
 
 </html>

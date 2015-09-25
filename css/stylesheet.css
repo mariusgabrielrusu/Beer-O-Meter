@@ -2,13 +2,11 @@
   -webkit-backface-visibility: hidden;
 }
 
-div[data-role="content"] {
+/*div[data-role="content"] {
   height: 600px;
-}
-
-div[data-role="footer"] > div[data-role="controlgroup"] {
-  left: 50%;
-  right: 50%;
+}*/
+div[data-role="header"] {
+  height: 40px;
 }
 
 div.containing-element a#next-to-data,
@@ -18,7 +16,7 @@ a#next-to-results {
   top: 0;
 }
 
-div.containing-element a#back-to-information {
+div.containing-element a#back-to-information, a#back-to-data {
   position: absolute;
   left: 5px;
   top: 0;
@@ -79,23 +77,22 @@ div.containing-element a#back-to-information {
 
 #beers{
   -webkit-appearance: none;
-  width: 400px;
+  width: 300px;
+  background-color: #f1f1f1;
+  background-image:  url("../images/beer1.png"), url("../images/beer0.png");
+  background-position: -270px, center;
+  background-repeat: no-repeat;
 }
 
 #beers::-webkit-slider-runnable-track {
-  height: 40px;
-  cursor: pointer;
-  background-color: #f1f1f1;
-  background-image: url("../images/beer.png");
-  background-repeat: repeat-x;
-  background-size: 40px 40px;
+  height: 30px;
 }
 
 #beers::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: none;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   margin-top: -4px;
 }
